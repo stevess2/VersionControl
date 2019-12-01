@@ -23,6 +23,8 @@ namespace UserMaintenance
            
             button1.Text = Resource1.Add;
             button2.Text = Resource1.Save;
+            button3.Text = Resource1.Delete;
+
             label1.Text = Resource1.LastName;
             label2.Text = Resource1.FirstName;
 
@@ -58,6 +60,30 @@ namespace UserMaintenance
                     }
                 }
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            int selectedItem = listBox1.SelectedIndex;
+            try
+            {
+                users.RemoveAt(selectedItem);
+            }
+            catch (Exception)
+            {
+
+            }
+            
+            listBox1.DataSource = users;
+
+            if (listBox1.Items.Count == 0)
+            {
+                button3.Enabled = false;
+            }
+
+            
+
         }
     }
 }
