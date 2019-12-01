@@ -23,6 +23,8 @@ namespace UserMaintenance
            
             button1.Text = Resource1.Add;
             button2.Text = Resource1.Save;
+            label1.Text = Resource1.LastName;
+            label2.Text = Resource1.FirstName;
 
             listBox1.DataSource = users;
             listBox1.ValueMember = "ID";
